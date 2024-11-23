@@ -6,7 +6,7 @@ personRouter.post('/', async (req, res) => {
     const { name, email, role, description, cases } = req.body;
 
     const person = await Person.create({
-        name, email, role, description, cases
+        name, email, role, description
     });
 
     res.json( person );
