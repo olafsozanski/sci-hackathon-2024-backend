@@ -6,6 +6,8 @@ const cors = require('cors');
 
 const app = express();
 
+const { caseRouter } = require('./endpoints/case');
+
 app.use(cors());
 app.use(express.json());
 
@@ -15,6 +17,7 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use('/cases', caseRouter);
 
 const start = async () => {
     console.log('Connecting to database...');
