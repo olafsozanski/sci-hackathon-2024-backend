@@ -13,7 +13,7 @@ caseRouter.post('/', async (req, res) => {
 });
 
 caseRouter.get('/', async (req, res) => {
-    const cases = await Case.find({}).populate('people');
+    const cases = await Case.find({}).sort({name: 1}).populate('people');
     res.json( cases );
 });
 

@@ -13,7 +13,7 @@ roomRouter.post('/', async (req, res) => {
 });
 
 roomRouter.get('/', async (req, res) => {
-    const room  = await Room.find({});
+    const room  = await Room.find({}).sort({name: 1});
     res.json( room );
 });
 
